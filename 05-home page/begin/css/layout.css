@@ -1,5 +1,12 @@
 /* grid system -- mobile first! */
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+}
+
 #devs ul {
   display: flex;
   flex-flow: row wrap;
