@@ -25,6 +25,21 @@ section,
     --gap-constant: 3%;
 }
 
+#inside > main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  --columns: 12;
+}
+
+#inside > main > article,
+#inside > main > aside {
+  --width: 12;
+  --gap: 15px;
+  --initialBasis: calc(var(--width, 0) / var(--columns, 12) * 100%);
+  flex-basis: calc(var(--initialBasis) - var(--gap));
+}
+
 
 /* tablet display - change columns to 11, place rows 3 and 4 on the bottom, full width */
 @media (min-width: 740px) {
@@ -63,6 +78,14 @@ section,
     .floatright {
         float: right;
         margin: 0 0 1rem 1rem;
+    }
+
+    #inside > main > article {
+      --width: 9;
+    }
+
+    #inside > main > aside {
+      --width: 3;
     }
 }
 @media (min-width: 950px){
