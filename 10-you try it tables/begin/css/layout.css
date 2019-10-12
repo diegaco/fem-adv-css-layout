@@ -27,6 +27,9 @@ section,
     --gap-constant: 3%;
 }
 
+#inside #table article {
+  overflow: hidden;
+}
 
 /* tablet display - change columns to 11, place rows 3 and 4 on the bottom, full width */
 @media (min-width: 740px) {
@@ -92,8 +95,17 @@ section,
     #inside article {
         --width: 10;
     }
+
+    #inside #table article {
+      --width: 14;
+    }
+
     #inside aside {
         --width: 4;
+    }
+
+    #inside #table aside {
+      --width: 14;
     }
 }
 @media (min-width: 1200px) {
@@ -117,5 +129,13 @@ section,
     }
     #inside aside {
         --width: 4;
+    }
+
+    #inside #table article {
+      --width: 12;
+    }
+
+    #inside #table aside {
+      --width: 4;
     }
 }

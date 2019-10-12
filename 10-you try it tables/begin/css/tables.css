@@ -8,11 +8,24 @@ and Adrian Roselli: http://adrianroselli.com/2017/11/a-responsive-accessible-tab
 
 
 /* basic table styling */
+
+.table-responsive {
+  overflow-x: auto;
+}
+
 table {
     border-collapse: collapse;
     border: 1px solid black;
 }
-tr:nth-child(odd) {
+
+caption {
+  font-size: var(--h3);
+  text-align: left;
+  font-weight: bold;
+  padding: .5rem;
+}
+
+tbody tr:nth-child(odd) {
     background-color: #f6dcd4;
 }
 th {
@@ -31,6 +44,113 @@ aside li {
 }
 
 
- 
+table,caption, thead, tbody, tr, th, td {
+  display: block;
+}
 
+thead tr {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
 
+caption br {
+  display: none;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr + tr {
+  border-top: 1px solid #ccc;
+}
+
+th, td {
+  padding: .5rem;
+}
+
+tbody td:nth-of-type(1)::before {
+  content: 'Celestial Body: '
+}
+
+tbody td:nth-of-type(2)::before {
+  content: 'Mass (10^24kg): '
+}
+
+tbody td:nth-of-type(3)::before {
+  content: 'Diameter'
+}
+
+tbody td:nth-of-type(4)::before {
+  content: 'Rotation Period: '
+}
+
+tbody td:nth-of-type(5)::before {
+  content: 'Length of Day: '
+}
+
+tbody td:nth-of-type(6)::before {
+  content: 'Distance from Sun: '
+}
+
+tbody td:nth-of-type(7)::before {
+  content: 'Orbital Period(days): '
+}
+
+tbody td:nth-of-type(8)::before {
+  content: 'Mean Temperature(C): '
+}
+
+tbody td:nth-of-type(9)::before {
+  content: 'Number of Moons: '
+}
+
+tbody td:nth-of-type(10)::before {
+  content: 'Ring System? '
+}
+
+tbody td:nth-of-type(11)::before {
+  content: 'Global Magnetic Field?'
+}
+
+tbody td {
+  display: flex;
+
+}
+
+tbody td::before {
+  flex-basis: 50%;
+}
+
+@media screen and (min-width: 950px) {
+  table {
+    display: table;
+  }
+
+  thead tr {
+    position: static;
+  }
+
+  caption {
+    display: table-caption;
+  }
+
+  thead,
+  tbody {
+    display: table-row-group;
+  }
+
+  tr {
+    display: table-row;
+  }
+
+  th, td, tbody td {
+    display: table-cell;
+  }
+
+  tbody td:nth-of-type(n)::before {
+    content: '';
+  }
+}
